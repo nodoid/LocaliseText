@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:Converters="clr-namespace:LocaliseText.Converters"
+             x:Class="LocaliseText.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:LanguageConverter x:Key="Languages" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Text="{Binding Converter={StaticResource Languages},ConverterParameter=LabelText}" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+        <Button Text="{Binding Converter={StaticResource Languages},ConverterParameter=ButtonText}" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>
